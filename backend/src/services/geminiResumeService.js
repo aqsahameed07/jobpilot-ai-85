@@ -17,6 +17,7 @@ async function getWorkingModel() {
     return cachedModel;
   }
 
+  
   try {
     console.log(`🔄 Using model: ${WORKING_MODEL}`);
     const model = genAI.getGenerativeModel({ model: WORKING_MODEL });

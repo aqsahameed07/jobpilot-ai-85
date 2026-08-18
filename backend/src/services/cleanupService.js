@@ -13,6 +13,7 @@ const deleteUnverifiedUsers = async () => {
       createdAt: { $lt: fiveMinutesAgo },
       isDeleted: false
     });
+    
 
     if (unverifiedUsers.length === 0) {
       // No users to delete

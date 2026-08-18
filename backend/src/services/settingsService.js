@@ -11,6 +11,7 @@ class SettingsService {
    * @param {String} userId - User ID
    * @returns {Promise<Object>} User settings object
    */
+  
   async getSettings(userId) {
     try {
       const user = await User.findById(userId).select('settings email');
