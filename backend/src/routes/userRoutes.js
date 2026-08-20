@@ -10,6 +10,7 @@ router.use(auth);
 router.get('/profile', userController.getProfile);
 router.put('/profile', userController.updateProfile);
 
+
 // ✅ Resume Routes
 router.put('/profile/resume', userController.saveResumeText);
 router.post('/profile/resume-upload', userController.uploadResumeFile);
