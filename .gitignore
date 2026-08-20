@@ -1,0 +1,12 @@
+# Backend environment
+backend/.env
+backend/.env.local
+backend/.env.*.local
+
+# Frontend environment
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# Dependencies
+node_modules/
