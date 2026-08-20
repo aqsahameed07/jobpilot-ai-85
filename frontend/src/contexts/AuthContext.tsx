@@ -3,12 +3,13 @@ import api from '@/lib/api';
 
 interface User {
   id: string;
-  name: string;
+  name: string; 
   email: string;
   role: string;
   isVerified: boolean;
   profileImage?: string;
 }
+
 
 interface AuthContextType {
   user: User | null;
