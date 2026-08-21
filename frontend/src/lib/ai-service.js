@@ -57,3 +57,51 @@ export const analyzeResume = async ({ resume, jobDescription, applicationContext
     );
   }
 };
+
+export const interviewTurn = async ({ role, difficulty, messages }) => {
+  try {
+    const response = await axios.post(`${API_URL}/api/interview/turn`, {
+      role,
+      difficulty,
+      messages
+    });
+
+    if (!response.data.success) {
+      throw new Error(response.data.error || 'Failed to generate question');
+    }
+
+    return response.data.data;
+  } catch (error) {
+    console.error('Interview turn error:', error);
+    throw new Error(
+      error.response?.data?.error || 
+      error.message || 
+      'Failed to get interview question'
+    );
+  }
+};
+
+/**
+ * Score completed interview
+ */
+export const scoreInterview = async ({ role, messages }) => {
+  try {
+    const response = await axios.post(`${API_URL}/api/interview/score`, {
+      role,
+      messages
+    });
+
+    if (!response.data.success) {
+      throw new Error(response.data.error || 'Failed to score interview');
+    }
+
+    return response.data.data;
+  } catch (error) {
+    console.error('Interview scoring error:', error);
+    throw new Error(
+      error.response?.data?.error || 
+      error.message || 
+      'Failed to score interview'
+    );
+  }
+};

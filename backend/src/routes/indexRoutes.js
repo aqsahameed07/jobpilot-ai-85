@@ -6,6 +6,8 @@ const userRoutes = require('./userRoutes');
 const applicationRoutes = require('./applicationRoutes');
 const coverLetterRoutes = require('./coverLetter');
 const resumeRoutes = require('./resumeRoutes'); // ✅ Import resume routes
+const interviewRoutes = require('./interviewRoutes'); 
+
 
 // Import all routes
 router.use('/auth', authRoutes);
@@ -13,6 +15,7 @@ router.use('/users', userRoutes);
 router.use('/applications', applicationRoutes);
 router.use('/cover-letter', coverLetterRoutes);
 router.use('/resume', resumeRoutes); // ✅ Add resume routes
+router.use('/interview', interviewRoutes);
 
 // Health check route
 router.get('/health', (req, res) => {

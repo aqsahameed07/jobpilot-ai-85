@@ -80,3 +80,4 @@ export interface SkillGap {
   importance: 'high' | 'medium' | 'low';
   how_to_close: string;
 }
+
